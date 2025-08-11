@@ -1,12 +1,11 @@
+import Ingredient from "../Ingredient/Ingredient";
+
 const IngredientList = (props) => {
-  return <ul>
+  return (<ul>
     {props.ingredients.map((ingredient, index) => {
-    return <li key={index} style={{ backgroundColor: ingredient.color }}>
-            {ingredient.name}
-            <button onClick={() => props.addToBurger(ingredient)}>+</button>
-        </li>
+        return <Ingredient ingredient={ingredient} index={index} addToBurger={props.addToBurger} />
     })}
-    </ul>;
+    </ul>)
 };
 
 export default IngredientList;
